@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Mubarak</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #222, #000);
+            color: goldenrod;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main {
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+        .main:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 26px;
+            background: linear-gradient(90deg, gold, orange);
+            color: black;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+        }
+        .message {
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: black;
+        }
+        .img-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            background: goldenrod;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        .link:hover {
+            background: orange;
+        }
+        audio {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .main {
+                width: 95%;
+                padding: 20px;
+            }
+            .img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+        <h1>RAMADAN MUBARAK</h1>
+        <p class="message">Wishing you and your family a blessed Ramadan. May this holy month bring you peace and prosperity.</p>
+        <div class="img-container">
+            <img src="https://as1.ftcdn.net/v2/jpg/08/76/85/68/1000_F_876856812_vaJ27S2NLkLy2jzBdeUmVvetN3UW7rTA.webp" class="img" alt="Ramadan Mubarak">
+        </div>
+        <audio id="bgAudio" loop>
+            <source src="naats-file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <a href="https://www.islamicfinder.org/ramadan/" class="link" target="_blank">Learn More About Ramadan</a>
+    </div>
+
+    <script>
+        document.addEventListener('click', function() {
+            document.getElementById('bgAudio').play();
+        }, { once: true });
+
+        const colors = ['#FFC0CB', '#F5F5F5', '#ADD8E6', '#98FB98', '#FFFFE0', '#FFA500', '#DDA0DD', '#A52A2A', '#808080', '#00FFFF', '#FF00FF'];
+        let colorIndex = 0;
+        setInterval(() => {
+            document.getElementById('main').style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 4000);
+    </script>
+</body>
+</html>
